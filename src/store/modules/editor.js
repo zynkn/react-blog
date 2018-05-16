@@ -33,7 +33,10 @@ export default handleActions({
   ...pender({
     type: WRITE_POST,
     onSuccess: (state, action) => {
+      console.log(state);
+      console.log(action);
       const { _id } = action.payload.data;
+      console.log(_id);
       return state.set('postId', _id);
     }
   })

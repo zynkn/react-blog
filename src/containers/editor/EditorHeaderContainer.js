@@ -25,8 +25,12 @@ class EditorHeaderContainer extends Component {
       // 태그 텍스트를 , 로 분기 시키고 앞 뒤 공백을 지운 후 중복 되는 값을 제거
       tags: tags === "" ? [] : [...new Set(tags.split(',').map(tag => tag.trim()))]
     };
+    console.log(post);
+    console.log('try0')
     try {
+      console.log('try1')
       await EditorActions.writePost(post);
+      console.log('try2')
       // 페이지를  이동시킵니다. 
       history.push(`/post/${this.props.postId}`);
     } catch (e) {

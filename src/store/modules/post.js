@@ -21,6 +21,7 @@ export default handleActions({
     type: GET_POST,
     onSuccess: (state, action) => {
       const { data: post } = action.payload;
+      console.log(action.payload);
       return state.set('post', fromJS(post));
     }
   })

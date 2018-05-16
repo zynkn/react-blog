@@ -4,6 +4,7 @@ import Post from 'containers/post/Post';
 
 const PostPage = ({ match }) => {
   const { id } = match.params;
+  console.log(match);
   return (
     <PageTemplate>
       <Post id={id} />

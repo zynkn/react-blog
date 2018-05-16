@@ -6,7 +6,7 @@ const App = () => {
     <div>
       <Switch>
         <Route exact path="/" component={ListPage}/>
-        <Route path="/post" component={PostPage}/>
+        <Route path="/post/:id" component={PostPage}/>
         <Route path="/editor" component={EditorPage}/>
         <Route path="/test" component={TestPage}/>
         <Route component={NotFoundPage}/>
