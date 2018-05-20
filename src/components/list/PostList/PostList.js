@@ -7,7 +7,7 @@ import removeMd from 'remove-markdown';
 
 const cx = classNames.bind(styles);
 
-const PostItem = ({ title, body, publishedDate, tags, id}) => {
+const PostItem = ({ title, body, publishedDate, tags, id }) => {
   const tagList = tags.map(
     tag => <Link key={tag} to={`/tag/${tag}`}>#{tag}</Link>
   );
@@ -22,9 +22,10 @@ const PostItem = ({ title, body, publishedDate, tags, id}) => {
     </div>
   )
 }
-const PostList = ({posts}) => {
+const PostList = ({ posts }) => {
   const postList = posts.map(
     (post) => {
+      console.log(post)
       const { _id, title, body, publishedDate, tags } = post.toJS();
       return (
         <PostItem

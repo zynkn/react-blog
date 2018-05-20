@@ -17,12 +17,13 @@ class ListContainer extends Component {
   }
 
   componentDidMount() {
+    console.log('listCon')
     this.getPostList();
   }
 
   componentDidUpdate(prevProps, prevState) {
     // 페이지/태그가 바뀔 대 리스트를 다시 불러옵니다.
-    if(prevProps.page !== this.props.page || prevProps.tag !== this.props.tag) {
+    if (prevProps.page !== this.props.page || prevProps.tag !== this.props.tag) {
       this.getPostList();
       // 스크롤을 맨 위로 올립니다.
       document.documentElement.scrollTop = 0;
@@ -31,7 +32,7 @@ class ListContainer extends Component {
 
   render() {
     const { loading, posts, page, lastPage, tag } = this.props;
-    if(loading) return null;
+    if (loading) return null;
     return (
       <div>
         <PostList posts={posts} />
