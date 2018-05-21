@@ -24,21 +24,10 @@ export default handleActions({
     onSuccess: (state, action) => {
       const { data: posts } = action.payload;
       // console.log(action.payload);
+      console.log(posts)
       console.log(Object.keys(posts));
-      console.log(fromJS({
-        0: {
-          id: '-LCgXGfbr9saSuiYwvEd',
-          title: 'First Post',
-          body: 'Write Something!'
-        },
-        1: {
-          id: '-LCgXL5X0j0kBkYp1btq',
-          title: 'Second Post',
-          body: 'Write Anything!'
-        }
-      }));
       const lastPage = action.payload.headers['last-page'];
-      return state.set('posts', fromJS(posts))
+      return state.set('posts', posts)
         .set('lastPage', lastPage);
     }
   })

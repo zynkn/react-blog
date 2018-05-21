@@ -27,6 +27,7 @@ const PostList = ({ posts }) => {
     (post) => {
       console.log(post)
       const { _id, title, body, publishedDate, tags } = post.toJS();
+      console.log(_id);
       return (
         <PostItem
           title={title}
