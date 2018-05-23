@@ -23,7 +23,7 @@ class EditorHeaderContainer extends Component {
       title,
       body: markdown,
       // 태그 텍스트를 , 로 분기 시키고 앞 뒤 공백을 지운 후 중복 되는 값을 제거
-      tags: tags === "" ? [] : [...new Set(tags.split(',').map(tag => tag.trim()))]
+      tags: tags === "" ? [''] : [...new Set(tags.split(',').map(tag => tag.trim()))]
     };
     try {
       await EditorActions.writePost(post);

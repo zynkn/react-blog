@@ -22,12 +22,16 @@ export default handleActions({
   ...pender({
     type: GET_POST_LIST,
     onSuccess: (state, action) => {
-      const { data: posts } = action.payload;
-      // console.log(action.payload);
-      console.log(posts)
-      console.log(Object.keys(posts));
+      const posts = [];
+      Object.keys(action.payload.data).forEach((item, idx) => {
+        console.log(item, idx);
+        posts.push({
+          _id: item,
+          ...Object.values(action.payload.data)[idx]
+        })
+      })
       const lastPage = action.payload.headers['last-page'];
-      return state.set('posts', posts)
+      return state.set('posts', fromJS(posts))
         .set('lastPage', lastPage);
     }
   })

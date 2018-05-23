@@ -15,7 +15,9 @@ const PostInfo = ({ publishedDate, title, tags }) => (
         {
           // tags 가 존재하는 경우에만 map 을 실행합니다.
           tags && tags.map(
-            tag => <Link key={tag} to={`/tag/${tag}`}>#{tag}</Link>
+            tag => {
+              return tag ? <Link key={tag} to={`/tag/${tag}`}>#{tag}</Link> : ('')
+            }
           )
         }
       </div>
